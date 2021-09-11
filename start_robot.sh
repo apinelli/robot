@@ -1,3 +1,5 @@
+#!/var/www/lab_app/bin/python
+
 from flask import Flask
 from flask import render_template, request
 import RPi.GPIO as GPIO
@@ -80,4 +82,4 @@ def stop():
 
 if __name__ == "__main__":
  print("Start")
- app.run(host='0.0.0.0',port=5010)
+ app.run(host='0.0.0.0',port=5010) 
