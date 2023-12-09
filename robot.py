@@ -1,3 +1,5 @@
+#!/opt/robot/bin/python
+
 from flask import Flask
 from flask import render_template, request
 import RPi.GPIO as GPIO
