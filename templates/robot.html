@@ -4,7 +4,7 @@
 </head>
 <body>
 
-<img src="http://192.168.15.100:8081" /> <!--Enter the IP Address of your Raspberry Pi-->
+<img src="http://192.168.15.14:8081" /> <!--Enter the IP Address of your Raspberry Pi-->
 <div style="float:right">
 
 </div>
@@ -18,9 +18,16 @@
 <center><a href="#" id="down" style="font-size:30px;text-decoration:none;"> Backward<br> &#x1F883;&#x1F883;</a></center>
 </div>
 
+<br>
 <!-- Button to activate the "/controle" endpoint -->
 <div style="text-align: center; margin-bottom: 20px;">
   <button id="controleButton" style="font-size: 20px;">Controle Remoto do Portao</button>
+</div>
+<br>
+
+<!-- Button to activate the "/motor" endpoint -->
+<div style="text-align: center; margin-bottom: 20px;">
+  <button id="motorButton" style="font-size: 20px;">Ativar os motores por 20s</button>
 </div>
 
 <script>
@@ -48,6 +55,10 @@ $( document ).ready(function(){
 	// Button click event to activate "/controle" endpoint
     $("#controleButton").on("click", function() {
       $.get('/controle');
+    });
+        // Button click event to activate "/motor" endpoint
+    $("#motorButton").on("click", function() {
+      $.get('/motor');
     });
 });
 </script>

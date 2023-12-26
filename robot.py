@@ -23,6 +23,7 @@ GPIO.setup(mr2, GPIO.OUT)
 GPIO.setup(ml1, GPIO.OUT)
 GPIO.setup(ml2, GPIO.OUT)
 GPIO.setup(2, GPIO.OUT)
+GPIO.setup(3, GPIO.OUT)
 GPIO.output(en_r, True)
 GPIO.output(mr1, False)
 GPIO.output(mr2, False)
@@ -30,6 +31,7 @@ GPIO.output(ml1, False)
 GPIO.output(ml2, False)
 GPIO.output(en_l, True)
 GPIO.output(2, True)
+GPIO.output(3, True)
 print("Done")
 
 a=1
@@ -90,7 +92,15 @@ def controle():
    GPIO.output(2, True)
    return 'true'
 
+@app.route('/motor')
+def motor():
+   data1="MOTOR"
+   GPIO.output(3 , False)
+   time.sleep(20)
+   GPIO.output(3, True)
+   return 'true'
+
 
 if __name__ == "__main__":
  print("Start")
- app.run(host='192.168.15.100',port=5010) 
+ app.run(host='0.0.0.0',port=5010) 
